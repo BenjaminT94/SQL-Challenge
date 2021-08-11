@@ -10,6 +10,7 @@ From employees
 Where hire_date LIKE '%1986';
 
 -- List the manager of each department with the following information: department number, department name, the manager's employee number, last name, first name.
+-- To do this, must join departments with dept_manager and employees
 Select dept_manager.dept_no, departments.dept_name, dept_manager.emp_no, employees.last_name, employees.first_name
 From dept_manager
 Join departments on dept_manager.dept_no = departments.dept_no
@@ -17,6 +18,10 @@ Join employees on dept_manager.emp_no = employees.emp_no;
 
 
 -- List the department of each employee with the following information: employee number, last name, first name, and department name.
+Select employees.emp_no,employees.last_name,employees.first_name,departments.dept_name
+From employees
+Join dept_emp on employees.emp_no = dept_emp.emp_no
+Join departments on dept_emp.dept_no = departments.dept_no;
 
 
 -- List first name, last name, and sex for employees whose first name is "Hercules" and last names begin with "B."
