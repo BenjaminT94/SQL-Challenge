@@ -33,8 +33,9 @@ Select employees.emp_no
 	,employees.first_name
 	,departments.dept_name
 From employees
-Join dept_emp on employees.emp_no = dept_emp.emp_no
-Join departments on dept_emp.dept_no = departments.dept_no;
+Join departments on dept_emp.dept_no = departments.dept_no
+Join dept_emp on employees.emp_no = dept_emp.emp_no;
+
 
 
 -- List first name, last name, and sex for employees whose first name is "Hercules" and last names begin with "B."
@@ -56,8 +57,8 @@ Select employees.emp_no
 	,employees.first_name
 	,departments.dept_name
 from employees
-join dept_emp on employees.emp_no=dept_emp.emp_no
 join departments on dept_emp.dept_no=departments.dept_no
+join dept_emp on employees.emp_no=dept_emp.emp_no
 where departments.dept_no='d007';
 
 
